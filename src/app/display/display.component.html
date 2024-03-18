@@ -1,0 +1,4 @@
+<div *ngFor="let place of zipData?.places">
+  <div>{{ place["place name"] }}, {{ place["state abbreviation"] }}</div>
+  <div>{{ place.longitude }}&deg;, {{ place.latitude }}&deg;</div>
+</div>

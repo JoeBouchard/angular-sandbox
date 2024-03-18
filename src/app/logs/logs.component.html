@@ -1,0 +1,17 @@
+<div *ngIf="logger.logs.length >= 0">
+  <h2>Logs:</h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Date</td>
+        <td>Message</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let log of logger.logs">
+      <tr>
+        <td>{{ log.date.toLocaleTimeString() }}</td>
+        <td>{{ log.entry }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
