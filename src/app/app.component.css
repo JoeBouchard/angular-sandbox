@@ -1,7 +1,9 @@
 nav, footer {
-    background: #020024;
+    background: #000000aa;
     margin: 0;
     height: fit-content;
+}
+nav {
     display: flex;
 }
 nav a {
@@ -21,7 +23,10 @@ footer {
     color: white;
     padding: 6px;
     margin-top: 12px;
+    flex-grow: 1;
 }
 #main {
     flex-grow: 1;
+    height: fit-content;
+    min-height: 80vh;
 }

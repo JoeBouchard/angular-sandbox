@@ -1,9 +1,18 @@
 <nav>
-  <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+  <a
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    ariaCurrentWhenActive="page"
+  >
     Home
   </a>
-  <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
-    Zip Code Map
+  <a
+    routerLink="/zipcode"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+  >
+    Zip Code Finder
   </a>
   <a routerLink="/logs" routerLinkActive="active" ariaCurrentWhenActive="page">
     Logs
@@ -12,4 +21,8 @@
 <div id="main">
   <router-outlet></router-outlet>
 </div>
-<footer><div>&copy;Joe Bouchard</div></footer>
+<footer>
+  <div>&copy;Joe Bouchard, {{ currentYear }}</div>
+  <br />
+  <app-logs></app-logs>
+</footer>

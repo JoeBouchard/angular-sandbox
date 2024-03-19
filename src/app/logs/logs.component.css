@@ -1,0 +1,18 @@
+td {
+    width: fit-content;
+}
+h3 {
+    text-align: center;
+    color: #ffffffaa
+}
+div {
+    margin: 0 12px;
+    color: #ffffffaa
+}
+button {
+    color: #f0f0f0;
+    background-color: #ffffff44;
+    border: 0;
+    border-radius: 4px;
+    padding: 3px 6px;
+}

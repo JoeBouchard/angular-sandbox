@@ -11,4 +11,10 @@ import { NgFor, NgIf } from '@angular/common';
 })
 export class LogsComponent {
   constructor(protected logger: LoggerService) {}
+
+  pingLog(): void {
+    this.logger.add(
+      `You clicked the ping button at ${new Date().toLocaleTimeString()}`
+    );
+  }
 }

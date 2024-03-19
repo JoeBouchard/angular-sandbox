@@ -3,18 +3,21 @@ html {
     background: rgb(2,0,36);
     background: linear-gradient(115deg, rgba(2,0,36,1) 0%, rgba(36,36,101,1) 5%, rgba(58,116,168,1) 23%, rgba(36,36,101,1) 53%, rgba(2,0,36,1) 64%);
     font-family: "Arimo", sans-serif;
-    height: 100%;
+    min-height: 100%;
+    height: fit-content;
 }
 body {
     margin: 0;
-    height: 100%;
+    min-height: 100%;
+    height: fit-content;
 }
-h1 {
+h1, h2, h3 {
     color: white;
     font-family: 'Montserrat', 'Arimo', sans-serif;
 }
 app-root {
     display: flex;
-    height: 100%;
+    min-height: 100vh;
+    height: fit-content;
     flex-direction: column;
 }

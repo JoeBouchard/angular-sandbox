@@ -1,16 +1,5 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import {
-  Observable,
-  Subject,
-  debounce,
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  of,
-  switchMap,
-  map,
-  tap,
-} from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable, Subject, map, tap } from 'rxjs';
 import { LoggerService } from '../../services/logger.service';
 import { ZipData, ZipFetcherService } from '../../services/zip-fetcher.service';
 import { FormsModule } from '@angular/forms';
