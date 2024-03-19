@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-    background: #607080;
+    background: rgb(2,0,36);
+    background: linear-gradient(115deg, rgba(2,0,36,1) 0%, rgba(36,36,101,1) 5%, rgba(58,116,168,1) 23%, rgba(36,36,101,1) 53%, rgba(2,0,36,1) 64%);
     font-family: "Arimo", sans-serif;
     height: 100%;
 }
