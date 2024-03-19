@@ -1,5 +1,15 @@
-<h1>Zip Codes</h1>
-<app-search></app-search>
-<app-display></app-display>
-<app-leaflet-map></app-leaflet-map>
-<app-logs></app-logs>
+<nav>
+  <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+    Home
+  </a>
+  <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">
+    Zip Code Map
+  </a>
+  <a routerLink="/logs" routerLinkActive="active" ariaCurrentWhenActive="page">
+    Logs
+  </a>
+</nav>
+<div id="main">
+  <router-outlet></router-outlet>
+</div>
+<footer><div>&copy;Joe Bouchard</div></footer>

@@ -1,0 +1,27 @@
+nav, footer {
+    background: #304050;
+    margin: 0;
+    height: fit-content;
+    display: flex;
+}
+nav a {
+    color: #e0e8f0;
+    text-decoration: none;
+    padding: 16px;
+}
+nav a.active {
+    color: #f8f8f8;
+    background-color: #203040;
+}
+nav a:hover {
+    color: #fff;
+    background-color: #202830;
+}
+footer {
+    color: white;
+    padding: 6px;
+    margin-top: 12px;
+}
+#main {
+    flex-grow: 1;
+}
