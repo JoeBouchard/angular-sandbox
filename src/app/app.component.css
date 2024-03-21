@@ -1,29 +1,31 @@
 nav, footer {
-    background: #000000aa;
+    background: #204039;
     margin: 0;
     height: fit-content;
 }
 nav {
     display: flex;
+    box-shadow: 0px 4px 12px -8px black
 }
 nav a {
-    color: #d0e0f0;
+    color: #eee;
     text-decoration: none;
     padding: 16px;
 }
 nav a.active {
-    color: #e0e8f0;
+    color: #f8f8f8;
     background-color: #111042;
 }
 nav a:hover {
-    color: #f8f8f8;
-    background-color: #3a74a8;
+    color: #fff;
+    background-color: #103029;
 }
 footer {
     color: white;
     padding: 6px;
     margin-top: 12px;
     flex-grow: 1;
+    box-shadow: 0px -4px 12px -8px black
 }
 #main {
     flex-grow: 1;

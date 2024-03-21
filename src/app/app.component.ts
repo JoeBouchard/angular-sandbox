@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.logger.add(
-      `Page loaded at ${new Date().toLocaleTimeString}. Starting log stream...`
+      `Page loaded at ${new Date().toLocaleTimeString()}. Starting log stream...`
     );
   }
 }

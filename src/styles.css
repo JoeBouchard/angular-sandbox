@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-    background: rgb(2,0,36);
-    background: linear-gradient(115deg, rgba(2,0,36,1) 0%, rgba(36,36,101,1) 5%, rgba(58,116,168,1) 23%, rgba(36,36,101,1) 53%, rgba(2,0,36,1) 64%);
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(115deg, rgba(2,0,36,1) 0%, rgba(36,36,101,1) 5%, rgba(58,116,168,1) 23%, rgba(36,36,101,1) 53%, rgba(2,0,36,1) 64%); */
+    background: #f8f8f8;
     font-family: "Arimo", sans-serif;
     min-height: 100%;
     height: fit-content;
@@ -12,7 +13,7 @@ body {
     height: fit-content;
 }
 h1, h2, h3 {
-    color: white;
+    color: #202824;
     font-family: 'Montserrat', 'Arimo', sans-serif;
 }
 app-root {
@@ -20,4 +21,19 @@ app-root {
     min-height: 100vh;
     height: fit-content;
     flex-direction: column;
+}
+
+footer .footer h3 {
+    color: #ffffffaa;
+}
+footer .footer div {
+    margin: 0 12px;
+    color: #ffffffaa;
+}
+footer .footer button {
+    color: #f0f0f0;
+    background-color: #ffffff44;
+    border: 0;
+    border-radius: 4px;
+    padding: 3px 6px;
 }
