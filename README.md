@@ -1,27 +1,23 @@
-# Sandbox
+# Joe's Angular Sandbox
+![img](src/android-chrome-192x192.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+This is a collection of personal projects I created when learning Angular using Angular version 17.3.0.
 
-## Development server
+## Hosting
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The site can be found on Github Pages at [https://joebouchard.github.io/angular-sandbox/](https://joebouchard.github.io/angular-sandbox/)
 
-## Code scaffolding
+## Projects
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Zip Code Finder
+A small application that displays the geographical position of a zip code on a map. It utilizes the [Zippopotam](https://api.zippopotam.us/) api to fetch the locations and Leaflet with Open Street Maps to display it on the page.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Local Logger
+Maintains and displays all local log events created by the application
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Muse
+The styling of the site is based on my and my wife's recent trip to the Isle of Skye in Scotland. The general palette is a base of light gray with primary green and secondary blue. 
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![img](src/skye.jpg)
