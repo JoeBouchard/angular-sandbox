@@ -17,7 +17,7 @@ jobs:
         run: |
           npm cache verify |
           npm ci |
-          npx @angular/cli build --deploy-url /angular-sandbox/ --output-path dist
+          npx @angular/cli build --base-href /angular-sandbox/ --output-path dist
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
