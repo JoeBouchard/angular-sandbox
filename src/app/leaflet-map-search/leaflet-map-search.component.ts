@@ -14,8 +14,7 @@ import { SearchComponent } from '../search/search.component';
   selector: 'app-leaflet-map-search',
   standalone: true,
   imports: [SearchComponent],
-  templateUrl: './leaflet-map-search.component.html',
-  styleUrl: './leaflet-map-search.component.css',
+  template: '<app-search style="width: 100px; height: 50px"></app-search>',
 })
 export class LeafletMapSearchComponent implements OnDestroy {
   private _map: Map | undefined;
