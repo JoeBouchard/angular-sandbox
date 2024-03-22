@@ -1,0 +1,48 @@
+<div style="margin: 0 16px 48px 16px">
+  <h2 style="text-align: center; margin-bottom: 0">
+    Currency Exchange Rates Over Time
+  </h2>
+  <div style="width: fit-content; margin: 4px auto 16px auto">
+    Display
+    <select [(ngModel)]="selectedCurrencyCode" (ngModelChange)="updateCharts()">
+      <option
+        *ngFor="let code of forex.currencyShortCodeList"
+        value="{{ code }}"
+      >
+        {{ forex.currencyCodes[code] }}
+      </option>
+    </select>
+    from
+    <input
+      type="date"
+      [ngModel]="selectedStartDate | date : 'yyyy-MM-dd'"
+      (ngModelChange)="selectedStartDate = $event; updateCharts()"
+    />
+    to
+    <input
+      type="date"
+      [ngModel]="selectedEndDate | date : 'yyyy-MM-dd'"
+      (ngModelChange)="selectedEndDate = $event; updateCharts()"
+    />
+  </div>
+  <div
+    style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px"
+  >
+    <div
+      *ngFor="let code of forex.currencyShortCodeList"
+      style="
+        width: fit-content;
+        height: fit-content;
+        box-shadow: 0 0 4px -2px #102030;
+        border-radius: 8px;
+        overflow: hidden;
+      "
+    >
+      <app-forex-chart
+        *ngIf="code !== selectedCurrencyCode"
+        [currencyCode]="code"
+      >
+      </app-forex-chart>
+    </div>
+  </div>
+</div>
