@@ -8,8 +8,10 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-search',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './search.component.html',
-  styleUrl: './search.component.css',
+  template: `<form>
+    <input [(ngModel)]="searchTerm" name="search" />
+    <button (click)="search()">Go to</button>
+  </form> `,
 })
 export class SearchComponent implements OnInit {
   private _searchTerm = '';

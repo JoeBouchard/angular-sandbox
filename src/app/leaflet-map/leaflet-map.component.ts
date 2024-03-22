@@ -12,8 +12,25 @@ import { LeafletMapSearchComponent } from '../leaflet-map-search/leaflet-map-sea
   selector: 'app-leaflet-map',
   standalone: true,
   imports: [LeafletMapSearchComponent],
-  templateUrl: './leaflet-map.component.html',
-  styleUrl: './leaflet-map.component.css',
+  template: `<div class="map-container">
+      <div class="map-frame">
+        <div id="map"></div>
+      </div>
+    </div>
+    <app-leaflet-map-search [map]="map" id="custom-search-component">
+    </app-leaflet-map-search> `,
+  styles: `.map-frame {
+    border: 2px solid black;
+    height: 100%;
+    min-height: 75vh;
+    margin: 0 16px;
+    border-radius: 8px;
+  }
+  #map {
+    height: 100%;
+    min-height: 75vh;
+    border-radius: 6px;
+  }`,
 })
 export class LeafletMapComponent implements AfterContentInit, OnInit {
   map: L.Map | undefined;

@@ -7,7 +7,10 @@ import { LeafletMapComponent } from '../leaflet-map/leaflet-map.component';
   selector: 'app-zip-code-page',
   standalone: true,
   imports: [SearchComponent, DisplayComponent, LeafletMapComponent],
-  templateUrl: './zip-code-page.component.html',
-  styleUrl: './zip-code-page.component.css',
+  template: `<h1>Zip Code Finder</h1>
+    <app-leaflet-map></app-leaflet-map>`,
+  styles: `h1 {
+    text-align: center;
+  }`,
 })
 export class ZipCodePageComponent {}
