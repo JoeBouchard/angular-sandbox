@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-    /* background: rgb(2,0,36); */
-    /* background: linear-gradient(115deg, rgba(2,0,36,1) 0%, rgba(36,36,101,1) 5%, rgba(58,116,168,1) 23%, rgba(36,36,101,1) 53%, rgba(2,0,36,1) 64%); */
     background: #f8f8f8;
     font-family: "Arimo", sans-serif;
     min-height: 100%;
@@ -15,6 +13,9 @@ body {
 h1, h2, h3 {
     color: #202824;
     font-family: 'Montserrat', 'Arimo', sans-serif;
+}
+input {
+    font-family: 'Arimo', sans-serif;
 }
 app-root {
     display: flex;
