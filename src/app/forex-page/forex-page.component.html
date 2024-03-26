@@ -24,10 +24,30 @@
       [ngModel]="selectedEndDate | date : 'yyyy-MM-dd'"
       (ngModelChange)="selectedEndDate = $event; updateCharts()"
     />
+    in
+    <select [(ngModel)]="forex.percentMode">
+      <option value="true">Percent Change</option>
+      <option value="false">Absolute</option>
+    </select>
   </div>
+
   <div
     style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px"
   >
+    <div *ngIf="forex.percentMode" style="width: 100%">
+      <div
+        style="
+          height: fit-content;
+          width: fit-content;
+          margin: auto;
+          box-shadow: 0 0 4px -2px #102030;
+          border-radius: 8px;
+          overflow: hidden;
+        "
+      >
+        <app-forex-chart [currencyCode]="'AVG'"> </app-forex-chart>
+      </div>
+    </div>
     <div
       *ngFor="let code of forex.currencyShortCodeList"
       style="
@@ -39,7 +59,7 @@
       "
     >
       <app-forex-chart
-        *ngIf="code !== selectedCurrencyCode"
+        *ngIf="code !== selectedCurrencyCode && code !== 'AVG'"
         [currencyCode]="code"
       >
       </app-forex-chart>

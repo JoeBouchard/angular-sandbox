@@ -37,12 +37,10 @@ export class SearchComponent implements OnInit {
   zipData$!: Observable<ZipData>;
 
   ngOnInit(): void {
-    this.searchTerms
-      .pipe(
-        tap((_) => this.logger.add(_)),
-        map((term: string) => this.zipFetcher.selectZip(parseInt(term)))
-      )
-      .subscribe((val) => console.log(val));
+    this.searchTerms.subscribe((_) => {
+      this.zipFetcher.selectZip(parseInt(_));
+      this.logger.add(_);
+    });
   }
 
   search() {

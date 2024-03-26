@@ -45,7 +45,6 @@ export class ForexPageComponent implements OnInit {
   }
 
   updateCharts() {
-    console.log(this.selectedStartDate);
     this.logger.add(
       `Requesting ${this.selectedCurrencyCode} data from ${this.selectedStartDate} to ${this.selectedEndDate}`
     );

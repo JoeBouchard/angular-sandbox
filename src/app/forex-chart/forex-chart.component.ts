@@ -5,6 +5,7 @@ import {
   ForexFetcherService,
   TimeRateResponse,
 } from '../../services/forex-fetcher.service';
+import { LoggerService } from '../../services/logger.service';
 
 export interface TimeChartData {
   time: Date;
@@ -41,7 +42,6 @@ export class ForexChartComponent implements OnInit {
   public currencyCode: string = '';
 
   private formatChartData(data: TimeRateResponse | undefined): TimeChartData[] {
-    console.log(data);
     if (!data) return [];
     return Object.keys(data.rates)
       .map((rate) => ({
@@ -56,8 +56,12 @@ export class ForexChartComponent implements OnInit {
     data.sort((a, b) => (a.time < b.time ? -1 : 1));
     var bgColor = '#eecccc';
     var theme = redChart;
+    if (data.length < 1) {
+      this.options = {};
+      this.logger.add(`Error getting data for ${chartData?.base}`);
+      return;
+    }
     const firstValue = data[0].value;
-    console.log(data[0]);
 
     if (firstValue < data[data.length - 1].value) {
       bgColor = '#cceecc';
@@ -74,15 +78,22 @@ export class ForexChartComponent implements OnInit {
       },
       // background: { fill: bgColor },
       title: {
-        text: `${chartData?.base} to ${
-          this.forex.currencyCodes[this.currencyCode]
-        }`,
+        text:
+          this.currencyCode !== 'AVG'
+            ? `${chartData?.base} to ${
+                this.forex.currencyCodes[this.currencyCode]
+              }`
+            : `${chartData?.base} on average`,
       },
       axes: [
         {
           type: 'number',
           position: 'left',
           keys: ['value'],
+          label: {
+            formatter: (params) =>
+              `${params.value}${this.forex.percentMode ? '%' : ''}`,
+          },
         },
         {
           type: 'time',
@@ -105,7 +116,15 @@ export class ForexChartComponent implements OnInit {
             renderer: ({ datum, xKey, yKey }) => {
               return {
                 title: new Date(datum[xKey]).toLocaleDateString(),
-                content: `1 ${chartData?.base} was ${datum[yKey]} ${this.currencyCode}`,
+                content: this.forex.percentMode
+                  ? `${chartData?.base} was ${
+                      datum[yKey]
+                    }% of its initial value ${
+                      this.currencyCode === 'AVG'
+                        ? 'on average'
+                        : 'in ' + this.currencyCode
+                    }`
+                  : `1 ${chartData?.base} was ${datum[yKey]} ${this.currencyCode}`,
                 backgroundColor:
                   datum[yKey] > firstValue ? '#55bb75' : '#bb6555',
               };
@@ -116,7 +135,10 @@ export class ForexChartComponent implements OnInit {
     };
   }
 
-  constructor(public forex: ForexFetcherService) {}
+  constructor(
+    public forex: ForexFetcherService,
+    public logger: LoggerService
+  ) {}
 
   ngOnInit(): void {
     this.forex.conversionDateData.subscribe((_) => this.configureOptions(_));
